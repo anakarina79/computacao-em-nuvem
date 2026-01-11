@@ -1114,5 +1114,959 @@ const questions = [
     "correta": "C",
     "tema": "Gestão SO PaaS",
     "justificativa": "No PaaS, você não tem acesso root ao SO para manutenção; o provedor cuida de patches e updates."
-  }
+  },
+{
+    "enunciado": "Suítes de escritório, como o Microsoft 365, são exemplos do modelo SaaS (software as a service), pois o usuário utiliza um software fornecido pelo provedor do serviço.",
+    "correta": "C",
+    "tema": "Modelos de Serviço (SaaS)",
+    "justificativa": "Correto. No SaaS, o cliente consome a aplicação final (como Word ou Excel online) sem gerenciar nada da infraestrutura subjacente [1]. Analogia: É como pedir uma pizza pronta (SaaS); você só come, não precisa ter o forno ou fazer a massa."
+  },
+  {
+    "enunciado": "O recurso Amazon Virtual Private Cloud (VPC) é a ferramenta primária responsável por proteger dados confidenciais armazenados no AWS S3 através de descoberta automática.",
+    "correta": "E",
+    "tema": "AWS Security",
+    "justificativa": "A VPC isola redes, mas não protege intrinsecamente o *conteúdo* confidencial de dados no S3 contra vazamento ou classificação. O S3 é um serviço global, fora da VPC por padrão. A ferramenta de proteção de dados sensíveis é o Macie [2]."
+  },
+  {
+    "enunciado": "O AWS Identity and Access Management (IAM) é o recurso específico para descobrir e proteger dados confidenciais (PII) dentro do AWS S3.",
+    "correta": "E",
+    "tema": "AWS Security",
+    "justificativa": "O IAM gerencia *quem* pode acessar o quê (permissões), mas não analisa o conteúdo dos arquivos para classificar dados confidenciais [2]."
+  },
+  {
+    "enunciado": "O Amazon Macie é o recurso que protege dados confidenciais armazenados no AWS S3, utilizando aprendizado de máquina para descobrir e proteger dados sensíveis.",
+    "correta": "C",
+    "tema": "AWS Security",
+    "justificativa": "Macie é um serviço de segurança de dados que usa machine learning para descobrir dados confidenciais (como cartões de crédito) no S3 [2]. Analogia: O Macie é o cão farejador que cheira suas malas (Buckets) procurando itens proibidos ou sensíveis."
+  },
+  {
+    "enunciado": "A função principal do AWS Lambda é avaliar serviços, frameworks e modelos de base de inteligência artificial e machine learning.",
+    "correta": "E",
+    "tema": "AWS Lambda",
+    "justificativa": "Avaliar modelos de IA/ML refere-se a serviços como Amazon Bedrock ou SageMaker. O Lambda é um serviço de computação (FaaS) [3]."
+  },
+  {
+    "enunciado": "A responsabilidade principal do AWS Lambda é criar e executar servidores virtuais na nuvem.",
+    "correta": "E",
+    "tema": "AWS Lambda vs EC2",
+    "justificativa": "Criar servidores virtuais é função do **Amazon EC2**. O Lambda é *serverless*; você executa código *sem* criar servidores [3]."
+  },
+  {
+    "enunciado": "O AWS Lambda é responsável por executar código sem a necessidade de provisionar ou gerenciar servidores.",
+    "correta": "C",
+    "tema": "AWS Lambda",
+    "justificativa": "Definição correta de FaaS (Function as a Service). Você sobe o código e a AWS roda quando necessário [3]. Analogia: É como um táxi; você entra e anda (executa), não precisa comprar o carro nem fazer manutenção nele (servidor)."
+  },
+  {
+    "enunciado": "O objetivo da funcionalidade Duet AI no Google Cloud Code é receber assistência com tecnologia de IA diretamente no ambiente de desenvolvimento integrado (IDE).",
+    "correta": "C",
+    "tema": "Google Cloud Code",
+    "justificativa": "O Duet AI atua como um assistente de codificação (code completion, chat) dentro da IDE [4]."
+  },
+  {
+    "enunciado": "O Cloud Code do Google Cloud tem como principal funcionalidade configurar APIs a partir de um gerenciador de bibliotecas, sem recursos de assistência por IA.",
+    "correta": "E",
+    "tema": "Google Cloud Code",
+    "justificativa": "Embora gerencie APIs, o foco da questão e da ferramenta Duet AI é a assistência inteligente ao desenvolvedor, e não apenas configuração de bibliotecas [4]."
+  },
+  {
+    "enunciado": "O SaaS diferencia-se do PaaS por ter o foco em distribuir soluções de software prontas, independentemente da infraestrutura de TI.",
+    "correta": "C",
+    "tema": "SaaS vs PaaS",
+    "justificativa": "SaaS entrega o software pronto para uso final (ex: Gmail). PaaS entrega ferramentas para *criar* software [5]."
+  },
+  {
+    "enunciado": "O IaaS é considerado um serviço de PaaS incrementado por sistemas operacionais que rodam diretamente da nuvem e ferramentas analytics.",
+    "correta": "E",
+    "tema": "Hierarquia de Nuvem",
+    "justificativa": "Conceito invertido. O IaaS é a base (infra). O PaaS é que é o 'incremento' sobre o IaaS, adicionando runtime e middleware. O IaaS não é um PaaS melhorado; é um nível inferior de abstração [6]."
+  },
+  {
+    "enunciado": "O IaaS permite que a maioria das tarefas ligadas a gerenciamento e manutenção de data center e infraestrutura física seja abstraída e disponibilizada como serviço.",
+    "correta": "C",
+    "tema": "IaaS",
+    "justificativa": "No IaaS, você não cuida do ar-condicionado, energia ou racks (físico), mas gerencia o SO e as redes virtuais [6]."
+  },
+  {
+    "enunciado": "No modelo de nuvem pública, o cliente não precisa adquirir infraestrutura física nem fazer sua manutenção, pois isso é responsabilidade do fornecedor.",
+    "correta": "C",
+    "tema": "Nuvem Pública",
+    "justificativa": "O CAPEX (custo de capital/compra) é substituído por OPEX (custo operacional/aluguel). O hardware é do provedor [7]."
+  },
+  {
+    "enunciado": "O modelo de nuvem híbrida é utilizado por organizações para ganhar flexibilidade, combinando infraestrutura local e nuvem pública.",
+    "correta": "C",
+    "tema": "Nuvem Híbrida",
+    "justificativa": "Permite manter dados críticos on-premise (privada) e usar a nuvem pública para transbordo ou processamento pesado [8]."
+  },
+  {
+    "enunciado": "O modelo de nuvem privada é frequentemente preferido por órgãos governamentais por não estar disponível para uso geral, oferecendo maior controle.",
+    "correta": "C",
+    "tema": "Nuvem Privada",
+    "justificativa": "A exclusividade da nuvem privada atende a requisitos rígidos de segurança e soberania de dados comuns no governo [8]."
+  },
+  {
+    "enunciado": "A plataforma de front-end na arquitetura de computação em nuvem inclui componentes como servidores e armazenamento de dados.",
+    "correta": "E",
+    "tema": "Arquitetura Cloud (Front vs Back)",
+    "justificativa": "Servidores e armazenamento ficam no **Back-end** (lado da nuvem). O Front-end é o lado do cliente [9]."
+  },
+  {
+    "enunciado": "O 'thin client' (cliente magro) é um exemplo de componente utilizado na plataforma front-end da arquitetura de computação em nuvem.",
+    "correta": "C",
+    "tema": "Front-end Cloud",
+    "justificativa": "O front-end é a interface de acesso (navegador, app mobile, thin client) usada pelo usuário para conectar à nuvem [10]."
+  },
+  {
+    "enunciado": "O AWS S3 armazena objetos de forma redundante, em diversos dispositivos e em no mínimo três zonas de disponibilidade.",
+    "correta": "C",
+    "tema": "AWS S3 Durabilidade",
+    "justificativa": "O S3 Standard replica dados automaticamente em no mínimo 3 AZs (Zonas de Disponibilidade) para garantir 99,999999999% de durabilidade [11]."
+  },
+  {
+    "enunciado": "A dificuldade de migração de dados e cargas de trabalho entre concorrentes de nuvem (lock-in) pode gerar custos altos e incompatibilidades.",
+    "correta": "C",
+    "tema": "Vendor Lock-in",
+    "justificativa": "O aprisionamento tecnológico (Vendor Lock-in) ocorre quando APIs proprietárias dificultam sair de um provedor (ex: AWS) para outro (ex: Azure) [11]."
+  },
+  {
+    "enunciado": "IaaS, PaaS e SaaS são os três tipos principais de provedores de serviços de nuvem.",
+    "correta": "C",
+    "tema": "Modelos de Serviço",
+    "justificativa": "Classificação padrão do NIST para modelos de serviço [11]."
+  },
+  {
+    "enunciado": "No deploy em nuvem, a característica 'pool de recursos' é a que garante que os recursos possam ser provisionados e liberados para escalabilidade.",
+    "correta": "E",
+    "tema": "Características NIST",
+    "justificativa": "A característica descrita ('provisionar e liberar para escalabilidade') refere-se à **Elasticidade Rápida**. 'Pool de recursos' refere-se ao compartilhamento de hardware entre vários clientes (multitenancy) [12]."
+  },
+  {
+    "enunciado": "O Microsoft Azure Cloud Services é um exemplo de PaaS que oferece ambiente para execução de aplicações escaláveis.",
+    "correta": "C",
+    "tema": "Azure PaaS",
+    "justificativa": "Azure Cloud Services (clássico) e App Service são PaaS, onde a Microsoft gerencia o SO e o usuário foca na aplicação [13]."
+  },
+  {
+    "enunciado": "A infraestrutura como serviço (IaaS) permite o uso de aplicativos baseados em nuvem como email e calendário do Microsoft Office 365.",
+    "correta": "E",
+    "tema": "SaaS vs IaaS",
+    "justificativa": "Office 365 (email, calendário) é **SaaS** (Software), não IaaS. IaaS seria alugar a máquina virtual para instalar um servidor de email [14]."
+  },
+  {
+    "enunciado": "A característica de serviço sob demanda garante que recursos possam ser acessados por clientes a partir de qualquer plataforma (celulares, tablets).",
+    "correta": "E",
+    "tema": "Características NIST",
+    "justificativa": "O acesso por várias plataformas refere-se ao **Amplo Acesso à Rede** (Broad Network Access). Serviço sob demanda refere-se à capacidade de contratar sem falar com humanos [14]."
+  },
+  {
+    "enunciado": "Em uma solução SaaS, o usuário pode desenvolver e gerenciar aplicações sem criar a infraestrutura.",
+    "correta": "E",
+    "tema": "SaaS vs PaaS",
+    "justificativa": "Desenvolver e gerenciar aplicações é função do **PaaS**. No SaaS, o usuário apenas *usa* a aplicação pronta [15]."
+  },
+{
+    "enunciado": "Uma vantagem do banco de dados em nuvem gerenciado é o ajuste automático de disponibilidade e escalabilidade.",
+    "correta": "C",
+    "tema": "Banco de Dados Gerenciado",
+    "justificativa": "Serviços como Amazon RDS ou Azure SQL automatizam backups, patches e escala, otimizando o desempenho e reduzindo a carga administrativa [37]."
+  },
+  {
+    "enunciado": "A configuração de um ambiente multicloud com diferentes regiões geográficas é considerada o maior desafio para conformidade regulatória (compliance).",
+    "correta": "C",
+    "tema": "Desafios Multicloud",
+    "justificativa": "Leis de proteção de dados (como LGPD/GDPR) exigem saber exatamente onde o dado está. Espalhar dados por múltiplas nuvens e países torna a auditoria e conformidade complexas [38]."
+  },
+  {
+    "enunciado": "A solução hiperconvergente da Nutanix converge toda a pilha do data center, incluindo computação, armazenamento e virtualização.",
+    "correta": "C",
+    "tema": "Hiperconvergência (HCI)",
+    "justificativa": "HCI (Hyper-Converged Infrastructure) elimina silos de hardware, unificando servidores e storage via software. Nutanix é líder nisso [39]."
+  },
+  {
+    "enunciado": "A nuvem privada de uma organização pode ser gerenciada por um provedor de serviços (terceirizado), desde que os recursos não sejam compartilhados publicamente.",
+    "correta": "C",
+    "tema": "Nuvem Privada Gerenciada",
+    "justificativa": "Privada define a *exclusividade* do uso, não necessariamente quem aperta os parafusos. Um terceiro pode gerir sua nuvem privada [40]."
+  },
+  {
+    "enunciado": "No modelo PaaS, o sistema operacional é necessariamente controlado pelo usuário.",
+    "correta": "E",
+    "tema": "PaaS",
+    "justificativa": "No PaaS, o SO é controlado pelo provedor. O usuário controla a aplicação [41]."
+  },
+  {
+    "enunciado": "Na nuvem, o backup dos dados pode ser especificado por um software cliente, caracterizando o modelo de armazenamento como serviço (STaaS ou BaaS).",
+    "correta": "C",
+    "tema": "Backup em Nuvem",
+    "justificativa": "Soluções de backup que enviam dados para a nuvem (ex: AWS S3, Azure Backup) são formas de Storage as a Service [42]."
+  },
+  {
+    "enunciado": "Um modelo de computação em nuvem caracteriza-se essencialmente por apresentar serviço mensurado (measured service).",
+    "correta": "C",
+    "tema": "Características NIST",
+    "justificativa": "Serviço medido é uma das 5 características essenciais. Você paga pelo que usa (pay-as-you-go) [43]."
+  },
+  {
+    "enunciado": "A disponibilização de serviços web é a única característica essencial da computação em nuvem.",
+    "correta": "E",
+    "tema": "Conceito de Nuvem",
+    "justificativa": "Existem outras 4 características (Elasticidade, Autosserviço, etc.). Apenas ter um serviço web não faz dele uma nuvem [43]."
+  },
+  {
+    "enunciado": "Quando se implanta uma aplicação e suas bibliotecas sem gerenciar rede ou sistema operacional, utiliza-se o modelo IaaS.",
+    "correta": "E",
+    "tema": "PaaS vs IaaS",
+    "justificativa": "Se você *não* gerencia o SO, não é IaaS. A descrição encaixa em **PaaS** [44]."
+  },
+  {
+    "enunciado": "Uma organização que usa nuvem pública e uma nuvem privada exclusiva com tecnologia padronizada implementa o modelo híbrido.",
+    "correta": "C",
+    "tema": "Nuvem Híbrida",
+    "justificativa": "O uso conjunto e integrado de Pública + Privada define o modelo Híbrido [45]."
+  },
+  {
+    "enunciado": "O controle automático para escalar rapidamente e reduzir o uso de recursos como CPU e memória caracteriza a rápida elasticidade.",
+    "correta": "C",
+    "tema": "Elasticidade",
+    "justificativa": "Escalar para cima e para baixo automaticamente = Elasticidade [46]."
+  },
+  {
+    "enunciado": "A falha dentro de um datacenter que permite manter a operação em outro conjunto de recursos no mesmo datacenter (ou local próximo logicamente separado) refere-se à Zona de Disponibilidade.",
+    "correta": "C",
+    "tema": "Zonas de Disponibilidade",
+    "justificativa": "Embora a questão original seja um pouco confusa na formulação geográfica, o conceito de isolamento de falhas dentro de uma região é atendido pelas Zonas de Disponibilidade (Availability Zones) [47]."
+  },
+  {
+    "enunciado": "Na abordagem IaaS, o usuário é responsável pelas Aplicações, Dados, Runtime e Middleware, enquanto o fornecedor gerencia Virtualização e Storage.",
+    "correta": "C",
+    "tema": "Responsabilidade Compartilhada (IaaS)",
+    "justificativa": "O corte no IaaS ocorre no Sistema Operacional. O usuário assume do SO para cima (o que inclui Middleware e Runtime na visão de algumas bancas/diagramas específicos como o apresentado na questão original) [48]."
+  },
+  {
+    "enunciado": "Na abordagem IaaS, o usuário não precisa manter o sistema operacional, pois isso é garantido pelo provedor.",
+    "correta": "E",
+    "tema": "Responsabilidade IaaS",
+    "justificativa": "No IaaS, a manutenção (patches, updates) do SO é responsabilidade crítica do **usuário** [49]."
+  },
+  {
+    "enunciado": "Na abordagem PaaS, o usuário tem responsabilidade somente quanto a Aplicações e Dados.",
+    "correta": "C",
+    "tema": "Responsabilidade PaaS",
+    "justificativa": "No PaaS, o provedor entrega a plataforma (SO, Middleware, Runtime). O usuário traz apenas o código (App) e os dados [50]."
+  },
+{
+    "enunciado": "Na abordagem IaaS, o usuário é responsável por gerenciar Aplicações, Dados, Runtime, Middleware e Sistema Operacional, enquanto o fornecedor gerencia o Armazenamento e a Virtualização.",
+    "correta": "C",
+    "tema": "Responsabilidade Compartilhada (IaaS)",
+    "justificativa": "Esta é a definição padrão de IaaS. O provedor entrega a 'caixa' (hardware + virtualização) e o usuário cuida de todo o software dentro dela, desde o Windows/Linux (SO) até o código final."
+  },
+  {
+    "enunciado": "Assim como na PaaS, na abordagem IaaS há necessidade de o usuário manter e atualizar os produtos de software, incluindo o sistema operacional.",
+    "correta": "E",
+    "tema": "IaaS vs PaaS",
+    "justificativa": "No PaaS, o usuário **não** mantém o sistema operacional; isso é função do provedor. Apenas no IaaS o usuário cuida do SO. A comparação 'assim como' torna a questão errada."
+  },
+  {
+    "enunciado": "Na abordagem PaaS, o usuário tem responsabilidade somente quanto a Aplicações e Dados.",
+    "correta": "C",
+    "tema": "Responsabilidade PaaS",
+    "justificativa": "O PaaS abstrai toda a infraestrutura subjacente (SO, Middleware, Runtime), deixando o desenvolvedor focado apenas no código (App) e nas informações (Data)."
+  },
+  {
+    "enunciado": "Em computação em nuvem, quando uma organização monta e fornece serviços para outras empresas (clientes externos), ela está utilizando o modelo de nuvem pública.",
+    "correta": "C",
+    "tema": "Nuvem Pública",
+    "justificativa": "Nuvem Pública é aquela onde o provedor vende serviços para o público geral ou diversas empresas externas, via internet."
+  },
+  {
+    "enunciado": "Na computação em nuvem, quando o gerenciamento do espaço em disco e do sistema operacional é de responsabilidade do provedor, e o usuário apenas consome a aplicação, o serviço é SaaS.",
+    "correta": "C",
+    "tema": "SaaS",
+    "justificativa": "Se o provedor cuida de tudo (Infra + SO + App), é Software as a Service. O usuário é apenas um consumidor do serviço final."
+  },
+  {
+    "enunciado": "O PaaS é o modelo que disponibiliza ambiente de desenvolvimento e implantação completa, permitindo ao usuário criar aplicativos sem gerenciar a infraestrutura subjacente.",
+    "correta": "C",
+    "tema": "Definição PaaS",
+    "justificativa": "PaaS é a 'oficina' na nuvem. Oferece as ferramentas para construir software sem precisar construir o prédio da oficina."
+  },
+  {
+    "enunciado": "A arquitetura cloud native caracteriza-se pela adoção de práticas como microsserviços, contêineres e automação para aplicativos executados na nuvem.",
+    "correta": "C",
+    "tema": "Cloud Native",
+    "justificativa": "Aplicações nativas da nuvem são desenhadas para serem desacopladas (microsserviços), portáveis (contêineres) e elásticas desde o nascimento."
+  },
+  {
+    "enunciado": "O modelo IaaS fornece componentes de infraestrutura onde o usuário deve necessariamente contratar um grupo de recursos por um tempo fixo que precisar, sem flexibilidade.",
+    "correta": "E",
+    "tema": "IaaS e Elasticidade",
+    "justificativa": "O erro está na rigidez ('contratar pelo tempo que precisar' em oposição à demanda dinâmica). O IaaS é caracterizado pelo pagamento por uso (pay-as-you-go) e elasticidade, não necessariamente por contratos de tempo fixo para grupos de recursos."
+  },
+  {
+    "enunciado": "O modelo PaaS permite que novas soluções sejam desenvolvidas, sendo necessário ao usuário configurar os itens de infraestrutura física.",
+    "correta": "E",
+    "tema": "PaaS",
+    "justificativa": "No PaaS, o usuário **não** configura infraestrutura física (servidores, rede). Ele apenas configura a aplicação."
+  },
+  {
+    "enunciado": "Um dos grandes benefícios do modelo SaaS é a possibilidade de o usuário acessar seu conteúdo de interesse pela Internet, geralmente via navegador.",
+    "correta": "C",
+    "tema": "Acesso SaaS",
+    "justificativa": "A ubiquidade (acesso de qualquer lugar) é a marca registrada do SaaS."
+  },
+  {
+    "enunciado": "Para ser classificada como nuvem, os recursos devem ser agrupados para atender a vários consumidores (multi-tenant) e acessíveis via rede.",
+    "correta": "C",
+    "tema": "Características NIST",
+    "justificativa": "Resource Pooling (Multitenancy) e Broad Network Access são características essenciais segundo o NIST."
+  },
+  {
+    "enunciado": "No modelo IaaS, o provedor do serviço é responsável por proteger os dados dos clientes.",
+    "correta": "E",
+    "tema": "Segurança IaaS",
+    "justificativa": "Modelo de Responsabilidade Compartilhada: No IaaS, o provedor protege a infraestrutura (o 'muro' do data center). O cliente é o único responsável por proteger seus dados (criptografia, backup, acesso)."
+  },
+  {
+    "enunciado": "Uma nuvem pública oferece escalabilidade praticamente infinita e recursos compartilhados por organizações e indivíduos.",
+    "correta": "C",
+    "tema": "Nuvem Pública",
+    "justificativa": "A escala massiva dos grandes provedores (AWS, Azure) dá a ilusão de recursos infinitos para o usuário final."
+  },
+  {
+    "enunciado": "A diferença entre nuvem pública e privada é que a privada deve necessariamente ser operada e gerida pela própria organização proprietária.",
+    "correta": "E",
+    "tema": "Gestão Nuvem Privada",
+    "justificativa": "Uma nuvem privada pode ser gerenciada por terceiros (Outsourcing). O que define ser privada é a exclusividade de uso, não quem administra."
+  },
+  {
+    "enunciado": "A elasticidade oferece às organizações a possibilidade de diminuir ou aumentar as capacidades computacionais de forma dinâmica.",
+    "correta": "C",
+    "tema": "Elasticidade",
+    "justificativa": "Conceito core da nuvem: acompanhar a demanda em tempo real."
+  },
+  {
+    "enunciado": "A escalabilidade horizontal significa tornar um componente maior ou mais rápido (ex: aumentar CPU) para lidar com uma carga maior.",
+    "correta": "E",
+    "tema": "Escalabilidade Vertical vs Horizontal",
+    "justificativa": "Aumentar o tamanho do componente (mais CPU/RAM) é escalabilidade **Vertical** (Scale Up). Horizontal (Scale Out) é adicionar *mais* máquinas."
+  },
+  {
+    "enunciado": "A escolha de uma solução de IaC (Infraestrutura como Código) com abordagem declarativa tem como desvantagem a necessidade de um administrador qualificado.",
+    "correta": "C",
+    "tema": "IaC",
+    "justificativa": "Ferramentas declarativas (como Terraform) exigem conhecimento específico da linguagem (HCL) e do estado desejado, demandando profissionais qualificados."
+  },
+  {
+    "enunciado": "Em um ambiente de nuvem, a replicação de dados em regiões distintas é feita automaticamente por padrão por qualquer serviço de nuvem para garantir disponibilidade.",
+    "correta": "E",
+    "tema": "Replicação Regional",
+    "justificativa": "A maioria dos serviços (como EC2 ou EBS) é zonal por padrão. A replicação para outra *Região* (Geo-redundância) geralmente exige configuração explícita e custo adicional, não é automática para tudo."
+  },
+  {
+    "enunciado": "Uma zona de disponibilidade é composta por um conjunto de datacenters que não são compartilhados com outras zonas de disponibilidade.",
+    "correta": "C",
+    "tema": "Isolamento de Zonas",
+    "justificativa": "Cada Zona (AZ) é fisicamente distinta e isolada das outras (energia, refrigeração próprias) para evitar falha em cascata."
+  },
+  {
+    "enunciado": "Para definir a região que será utilizada na nuvem, deve-se observar regras de conformidade e latência.",
+    "correta": "C",
+    "tema": "Escolha de Região",
+    "justificativa": "Leis de soberania de dados (onde o dado pode morar) e a distância do usuário (velocidade) são os fatores principais."
+  },
+  {
+    "enunciado": "O critério decisivo para definir a distribuição geográfica de datacenters de uma mesma zona de disponibilidade é a possibilidade de ocorrência de desastres naturais.",
+    "correta": "E",
+    "tema": "Zona vs Região",
+    "justificativa": "Zonas dentro de uma mesma região estão próximas (km de distância), então compartilham riscos de grandes desastres naturais (furacão, terremoto). O critério para desastres naturais define a separação entre **Regiões**, não Zonas."
+  },
+  {
+    "enunciado": "Para proteger arquivos de exclusão acidental no Amazon S3, deve-se ativar o recurso de versionamento no bucket.",
+    "correta": "C",
+    "tema": "AWS S3 Versionamento",
+    "justificativa": "O versionamento mantém o histórico. Se você deletar um arquivo, ele apenas coloca um 'marcador de exclusão', permitindo restaurar a versão anterior."
+  },
+  {
+    "enunciado": "Quando a infraestrutura está em nuvem, o nível de redundância correspondente a falhas em zonas de disponibilidade é considerado o nível 3.",
+    "correta": "C",
+    "tema": "Níveis de Redundância",
+    "justificativa": "Geralmente classifica-se: 1-Disco/Host, 2-Rack/Switch, 3-Datacenter/Zona, 4-Região."
+  },
+  {
+    "enunciado": "Para ser considerada computação em nuvem, uma implementação deve atender a cinco requisitos do NIST: amplo acesso à rede, autoatendimento, pool de recursos, elasticidade rápida e serviço medido.",
+    "correta": "C",
+    "tema": "NIST 5 Características",
+    "justificativa": "São os 5 pilares fundamentais que definem Cloud Computing."
+  },
+  {
+    "enunciado": "O armazenamento de objetos usa uma estrutura simples com metadados e um identificador exclusivo para cada objeto, ao invés de uma árvore de diretórios hierárquica.",
+    "correta": "C",
+    "tema": "Object Storage",
+    "justificativa": "Diferença chave entre Object Storage (S3) e Block/File Storage. Ideal para dados não estruturados."
+  },
+{
+    "enunciado": "O IaaS é o serviço de computação em nuvem que utiliza um modelo de pagamento por demanda (pay-per-use), onde o cliente paga apenas pelo que utiliza.",
+    "correta": "C",
+    "tema": "Características IaaS",
+    "justificativa": "O modelo OPEX (despesa operacional) variável é a base do IaaS. Analogia: Como a conta de luz, você paga pelo consumo, não pela instalação da usina [1]."
+  },
+  {
+    "enunciado": "No modelo PaaS, o cliente deve se preocupar com a camada de infraestrutura física e virtualização.",
+    "correta": "E",
+    "tema": "Benefício PaaS",
+    "justificativa": "No PaaS, a infraestrutura é abstraída. O cliente foca apenas na aplicação. Quem cuida da 'infra' é o provedor [2]."
+  },
+  {
+    "enunciado": "Escalabilidade é a característica de redimensionamento automatizado e instantâneo de recursos em tempo real de acordo com a demanda.",
+    "correta": "E",
+    "tema": "Escalabilidade vs Elasticidade",
+    "justificativa": "A definição dada (tempo real, automatizado, instantâneo, sob demanda) refere-se à **Elasticidade**. Escalabilidade geralmente refere-se à capacidade planejada de crescimento do sistema a longo prazo [3]."
+  },
+  {
+    "enunciado": "Uma diferença entre nuvens privadas e públicas é que as privadas utilizam uma infraestrutura compartilhada com o público geral.",
+    "correta": "E",
+    "tema": "Nuvem Privada",
+    "justificativa": "Nuvem Privada utiliza infraestrutura **dedicada/exclusiva** para uma organização, não compartilhada com o público [4]."
+  },
+  {
+    "enunciado": "Com o uso de IaC (Infraestrutura como Código), ainda é necessário fazer ajustes manuais frequentes no gerenciamento de servidores após a implantação.",
+    "correta": "E",
+    "tema": "Objetivo IaC",
+    "justificativa": "O objetivo da IaC é justamente automatizar tudo e evitar a configuração manual (que gera inconsistências). Se você precisa ajustar manualmente, a IaC falhou ou está mal implementada [5]."
+  },
+  {
+    "enunciado": "A plataforma de front-end na arquitetura de nuvem contém a infraestrutura pesada, como armazenamento e mecanismos de segurança.",
+    "correta": "E",
+    "tema": "Arquitetura Cloud",
+    "justificativa": "Armazenamento, servidores e segurança ficam no **Back-end** (lado do provedor). Front-end é a interface do usuário (cliente) [6]."
+  },
+  {
+    "enunciado": "IaC refere-se ao provisionamento da infraestrutura por meio de códigos e controle de versão, substituindo processos manuais.",
+    "correta": "C",
+    "tema": "Definição IaC",
+    "justificativa": "Permite tratar a infraestrutura como software (versioanamento, testes, repetição) [7]."
+  },
+  {
+    "enunciado": "Uma nuvem pública possibilita que o consumidor provisione recursos de rede e sub-redes para seus servidores.",
+    "correta": "C",
+    "tema": "Nuvem Pública (VPC)",
+    "justificativa": "Mesmo na nuvem pública, o usuário cria redes virtuais privadas (VPCs, Subnets) para isolar seus recursos logicamente [7]."
+  },
+  {
+    "enunciado": "A elasticidade rápida é a característica que permite que recursos sejam provisionados e liberados automaticamente conforme a necessidade.",
+    "correta": "C",
+    "tema": "Elasticidade",
+    "justificativa": "Pilar fundamental da nuvem: crescer e diminuir sob demanda [8]."
+  },
+  {
+    "enunciado": "Serviços de armazenamento de objetos (como S3) permitem que arquivos sejam replicados em diferentes localidades ou países.",
+    "correta": "C",
+    "tema": "Re-replicação S3",
+    "justificativa": "Recursos como Cross-Region Replication (CRR) permitem copiar dados automaticamente entre buckets em regiões geográficas diferentes para redundância [9]."
+  },
+  {
+    "enunciado": "Segundo o NIST, a computação em nuvem fornece um pool compartilhado de recursos de computação *não configuráveis*.",
+    "correta": "E",
+    "tema": "Definição NIST",
+    "justificativa": "A definição correta é um pool de recursos **configuráveis** (redes, servidores, armazenamento, etc.) [10]."
+  },
+  {
+    "enunciado": "No IaaS, o provedor gerencia toda a infraestrutura e também executa o software que fornece componentes como banco de dados e middleware.",
+    "correta": "E",
+    "tema": "IaaS vs PaaS",
+    "justificativa": "Se o provedor gerencia o Banco de Dados e Middleware, trata-se de **PaaS**. No IaaS, o provedor só entrega a VM; o cliente instala o DB e Middleware [11]."
+  },
+  {
+    "enunciado": "Service as a Software (SaaS) é um modelo de serviço definido pelo NIST.",
+    "correta": "E",
+    "tema": "Sigla SaaS",
+    "justificativa": "A sigla significa **Software as a Service** (Software como Serviço), e não 'Service as a Software' [12]."
+  },
+  {
+    "enunciado": "Google ApiGee é fornecido exclusivamente nas modalidades PaaS e IaaS.",
+    "correta": "E",
+    "tema": "Classificação de Serviço",
+    "justificativa": "ApiGee é uma plataforma de gerenciamento de API, geralmente consumida como PaaS ou SaaS, mas a questão aponta erro na classificação restritiva ou na inclusão de IaaS pura para essa ferramenta específica [13]."
+  },
+  {
+    "enunciado": "Na Plataforma como Serviço (PaaS), as aplicações são hospedadas na nuvem e acessadas via navegador, sendo voltadas para o usuário final como um produto pronto (ex: editor de texto).",
+    "correta": "E",
+    "tema": "PaaS vs SaaS",
+    "justificativa": "A descrição refere-se ao **SaaS**. PaaS é voltado para desenvolvedores (criar apps), não para usuários finais consumirem apps prontos [14]."
+  },
+  {
+    "enunciado": "No modelo IaaS, o consumidor é responsável pelo gerenciamento do sistema operacional e suas configurações.",
+    "correta": "C",
+    "tema": "Responsabilidade IaaS",
+    "justificativa": "Correto. O provedor entrega o hardware virtual, o cliente administra o SO (root/admin) [14]."
+  },
+  {
+    "enunciado": "Na computação em nuvem, a ideia de 'Grid Computing' (Grade) é sinônimo, onde computadores resolvem um único problema específico.",
+    "correta": "E",
+    "tema": "Grid vs Cloud",
+    "justificativa": "Grid foca em usar muitos computadores para uma tarefa massiva (ex: quebrar senha, cálculo climático). Nuvem foca em oferecer recursos para *vários* usuários com *várias* tarefas diferentes [15]."
+  },
+  {
+    "enunciado": "Design, desenvolvimento e testes são serviços típicos de uma infraestrutura SaaS.",
+    "correta": "E",
+    "tema": "SaaS vs PaaS",
+    "justificativa": "Essas são atividades de desenvolvimento, suportadas pelo **PaaS**. SaaS é o consumo do software já pronto [16]."
+  },
+  {
+    "enunciado": "O serviço AWS S3 suporta armazenamento de arquivos e criação de versões (versionamento) de cada arquivo armazenado.",
+    "correta": "C",
+    "tema": "AWS S3",
+    "justificativa": "O S3 é um Object Store com suporte nativo a versionamento para proteção de dados [17]."
+  },
+  {
+    "enunciado": "A elasticidade na nuvem gera a expectativa de fornecer recursos em qualquer quantidade e a qualquer momento rapidamente.",
+    "correta": "C",
+    "tema": "Elasticidade",
+    "justificativa": "É a promessa de capacidade 'infinita' e instantânea sob demanda [18]."
+  },
+  {
+    "enunciado": "A computação em nuvem é uma instância direta da computação autônoma, onde sistemas se autogerenciam completamente sem intervenção humana.",
+    "correta": "E",
+    "tema": "Conceitos de Nuvem",
+    "justificativa": "Embora tenha automação, a nuvem não é sinônimo de computação autônoma total. Ainda exige configuração, gerenciamento e arquitetura por parte dos humanos [19]."
+  },
+  {
+    "enunciado": "Disponibilidade, capacidade e desempenho são indicadores essenciais na entrega de soluções em nuvem.",
+    "correta": "C",
+    "tema": "KPIs de Nuvem",
+    "justificativa": "São as métricas fundamentais de SLA e qualidade de serviço [20]."
+  },
+  {
+    "enunciado": "A computação em nuvem geralmente aumenta o TCO (Total Cost of Ownership) e piora o ROI (Return on Investment).",
+    "correta": "E",
+    "tema": "Economia da Nuvem",
+    "justificativa": "O objetivo da nuvem é **reduzir** o TCO (trocando CAPEX por OPEX e eliminando gestão de hardware) e **melhorar** o ROI [21]."
+  },
+  {
+    "enunciado": "O aumento da disponibilidade dos serviços é um dos benefícios da adoção da computação em nuvem.",
+    "correta": "C",
+    "tema": "Disponibilidade",
+    "justificativa": "Devido à redundância nativa e infraestrutura distribuída dos provedores [21]."
+  },
+  {
+    "enunciado": "Serviços com demanda variável, como e-commerce, beneficiam-se da nuvem por evitar servidores ociosos em épocas de baixa utilização.",
+    "correta": "C",
+    "tema": "Elasticidade e Custo",
+    "justificativa": "Evita o 'over-provisioning' (comprar servidor para a Black Friday e deixá-lo parado o resto do ano) [22]."
+  },
+  {
+    "enunciado": "A migração de IaaS para SaaS não acarreta mudanças significativas na gestão de recursos.",
+    "correta": "E",
+    "tema": "Gestão IaaS vs SaaS",
+    "justificativa": "Acarreta mudança total. No IaaS você gerencia SO, patches, middleware. No SaaS você não gerencia nada técnico, apenas o uso. A carga operacional muda drasticamente [23]."
+  },
+  {
+    "enunciado": "A divisão em regiões e zonas permite que, em caso de desastre natural em uma região, outro data center assuma o serviço, aumentando a disponibilidade.",
+    "correta": "C",
+    "tema": "Disaster Recovery",
+    "justificativa": "Conceito de Geo-redundância. Se a região 'Leste dos EUA' for atingida por um furacão, a região 'Oeste dos EUA' pode assumir [24]."
+  },
+  {
+    "enunciado": "Em serviços de nuvem, as contas de usuários são criadas apenas para a empresa contratante, e não para cada usuário individualmente.",
+    "correta": "E",
+    "tema": "IAM",
+    "justificativa": "As boas práticas (IAM) exigem contas individuais para cada usuário para permitir auditoria e controle de acesso granular (quem fez o quê) [25]."
+  },
+  {
+    "enunciado": "A garantia de segurança na nuvem exige que o cliente instale firewalls físicos e balanceadores de carga na sua própria infraestrutura local.",
+    "correta": "E",
+    "tema": "Segurança em Nuvem",
+    "justificativa": "Na nuvem, utiliza-se firewalls virtuais (Security Groups, WAF) e Load Balancers fornecidos como serviço pelo provedor, não hardware local no cliente [26]."
+  },
+{
+    "enunciado": "A migração do provimento de um serviço de computação em nuvem, de IaaS para SaaS, não acarreta mudanças significativas na gestão de recursos.",
+    "correta": "E",
+    "tema": "Migração IaaS para SaaS",
+    "justificativa": "A mudança é drástica. No IaaS, a equipe de TI gerencia SO, patches e middleware. No SaaS, toda essa gestão técnica desaparece, restando apenas a gestão do uso/acesso da aplicação. Ocorre uma transferência massiva de responsabilidade operacional para o provedor."
+  },
+  {
+    "enunciado": "A divisão da nuvem em regiões e zonas aumenta a disponibilidade; caso ocorra um desastre natural em uma região, outro data center do provedor pode assumir os serviços.",
+    "correta": "C",
+    "tema": "Regiões e Zonas",
+    "justificativa": "Esta é a base da recuperação de desastres (Disaster Recovery). Regiões distintas são isoladas geograficamente para que um furacão na Flórida não afete a operação na Virgínia."
+  },
+  {
+    "enunciado": "Se o preço de um serviço de servidores virtuais for calculado apenas com base no sistema operacional utilizado, a definição do preço está bem dimensionada.",
+    "correta": "E",
+    "tema": "Precificação em Nuvem",
+    "justificativa": "O custo de uma VM depende de múltiplos fatores além do SO (Licença): Quantidade de vCPU, memória RAM, tamanho e tipo do disco (SSD/HDD), tráfego de rede e tempo de uso."
+  },
+  {
+    "enunciado": "Em serviços de computação em nuvem, as contas de usuários devem ser criadas apenas para a empresa contratante (conta genérica) e não para cada usuário individualmente.",
+    "correta": "E",
+    "tema": "IAM (Gestão de Identidade)",
+    "justificativa": "Prática de segurança ruim. O princípio da não-repudiação e auditoria exige que cada pessoa tenha sua própria identidade (usuário) para saber exatamente quem fez o quê."
+  },
+  {
+    "enunciado": "A garantia de segurança na nuvem demanda que o cliente instale firewalls físicos e balanceadores de carga na sua própria infraestrutura de TI local para proteger a nuvem.",
+    "correta": "E",
+    "tema": "Segurança em Nuvem",
+    "justificativa": "Na nuvem, utilizam-se appliances virtuais (WAF, Security Groups, Load Balancers como serviço) fornecidos pelo provedor. Não faz sentido técnico ou econômico usar hardware local para filtrar tráfego que já está no data center do provedor."
+  },
+  {
+    "enunciado": "No modelo IaaS, o provedor é responsável pela segurança fundamental do ambiente (física/infraestrutura), enquanto o usuário é responsável pela segurança de sua rede virtual e do que for construído sobre ela.",
+    "correta": "C",
+    "tema": "Responsabilidade Compartilhada",
+    "justificativa": "O provedor protege a nuvem (o prédio, os cabos); o cliente protege o que está na nuvem (o SO, os dados, as portas abertas)."
+  },
+  {
+    "enunciado": "Um aplicativo de edição de textos acessado via navegador, onde usuários colaboram e o histórico é salvo na nuvem, descreve o modelo PaaS.",
+    "correta": "E",
+    "tema": "SaaS vs PaaS",
+    "justificativa": "Isso descreve o **SaaS** (Software as a Service), como o Google Docs ou Office 365. PaaS seria o ambiente para *criar* esse editor de texto."
+  },
+  {
+    "enunciado": "O serviço de backup é restrito aos modelos IaaS e PaaS, pois no SaaS não há como personalizar recursos de hardware para realizar cópias.",
+    "correta": "E",
+    "tema": "Backup em SaaS",
+    "justificativa": "SaaS também possui backup (geralmente gerido pelo provedor ou via exportação de dados). A incapacidade de mexer no hardware não impede a cópia lógica dos dados."
+  },
+  {
+    "enunciado": "Computação em nuvem é uma estratégia onde recursos de TI altamente escaláveis são fornecidos como serviço para vários clientes externos via Internet.",
+    "correta": "C",
+    "tema": "Definição de Nuvem",
+    "justificativa": "Definição precisa que abrange escalabilidade, modelo de serviço e acesso remoto."
+  },
+  {
+    "enunciado": "Os serviços de nuvem são classificados em nuvem pública, privada, sob demanda e grade.",
+    "correta": "E",
+    "tema": "Modelos de Implantação",
+    "justificativa": "'Sob demanda' é uma característica, e 'Grade' (Grid) é um conceito anterior/distinto. Os modelos de implantação corretos são: Pública, Privada, Híbrida e Comunitária."
+  },
+  {
+    "enunciado": "A arquitetura de cloud computing é considerada descentralizada, pois suas aplicações são executadas em ambientes distintos.",
+    "correta": "E",
+    "tema": "Centralização vs Descentralização",
+    "justificativa": "A nuvem é baseada em data centers massivos e **centralizados** (embora distribuídos regionalmente) que provêm recursos virtualizados. A computação em Grade (Grid) é que é descentralizada."
+  },
+  {
+    "enunciado": "A computação em nuvem oferece infraestrutura elástica para sistemas sem necessidade de customizações nas aplicações.",
+    "correta": "E",
+    "tema": "Adaptação para Nuvem",
+    "justificativa": "Para aproveitar a elasticidade real, as aplicações frequentemente precisam ser refatoradas ou customizadas (ex: tornarem-se stateless), não é sempre 'plug-and-play'."
+  },
+  {
+    "enunciado": "Em comparação aos modelos IaaS, a implantação do modelo PaaS exige um investimento inicial menor em infraestrutura.",
+    "correta": "C",
+    "tema": "Custo PaaS vs IaaS",
+    "justificativa": "No PaaS, você não gasta tempo/dinheiro configurando servidores, redes e SOs (setup de infraestrutura), o que reduz o custo inicial de implantação comparado ao IaaS."
+  },
+  {
+    "enunciado": "Uma pequena empresa pode hospedar seu sistema em nuvem pública sem custo, pois toda nuvem pública é gratuita.",
+    "correta": "E",
+    "tema": "Nuvem Pública",
+    "justificativa": "Nuvem pública refere-se ao acesso compartilhado, não à gratuidade. A maioria cobra por uso (Pay-as-you-go)."
+  },
+  {
+    "enunciado": "Uma nuvem privada permite que a organização controle o seu próprio ambiente, incluindo seus dados.",
+    "correta": "C",
+    "tema": "Nuvem Privada",
+    "justificativa": "O maior benefício da nuvem privada é o controle total e exclusivo sobre a infraestrutura e governança de dados."
+  },
+  {
+    "enunciado": "Na computação em nuvem, o repositório de recursos de TI pode ser provisionado e escalado mediante acesso via rede.",
+    "correta": "C",
+    "tema": "Provisionamento",
+    "justificativa": "Acesso via rede (Network Access) é o meio pelo qual se consome e controla a nuvem."
+  },
+  {
+    "enunciado": "As aplicações do modelo SaaS devem utilizar banco de dados separado para que os dados de cada empresa fiquem isolados.",
+    "correta": "E",
+    "tema": "SaaS Multitenancy",
+    "justificativa": "No SaaS, é comum o uso de bancos de dados compartilhados (Multi-tenant) onde o isolamento dos dados entre clientes é feito via software (Logic Isolation), e não necessariamente com um DB físico separado para cada um."
+  },
+  {
+    "enunciado": "No modelo IaaS, as máquinas virtuais persistentes utilizam discos virtuais para armazenamento de dados após seu desligamento.",
+    "correta": "C",
+    "tema": "Persistência IaaS",
+    "justificativa": "O armazenamento em bloco (ex: EBS, Azure Disk) persiste independentemente do estado de energia da VM."
+  },
+  {
+    "enunciado": "Uma premissa do PaaS é a oferta das mesmas funcionalidades para todos os usuários para garantir estabilidade.",
+    "correta": "E",
+    "tema": "Flexibilidade PaaS",
+    "justificativa": "O PaaS oferece ferramentas flexíveis para que cada desenvolvedor crie funcionalidades *diferentes*. A padronização rígida de funcionalidade final é característica do SaaS."
+  },
+  {
+    "enunciado": "No modelo SaaS, as aplicações podem oferecer interfaces customizadas para cada cliente.",
+    "correta": "C",
+    "tema": "Customização SaaS",
+    "justificativa": "Embora o núcleo seja o mesmo, o SaaS permite customizações de interface (branding, cores, dashboards) e configurações de fluxo de trabalho."
+  },
+  {
+    "enunciado": "Quando um sistema não possui nenhuma característica incompatível com a computação em nuvem, ele é classificado como 'Cloud Ready' (Pronto para a nuvem).",
+    "correta": "C",
+    "tema": "Migração (Cloud Ready)",
+    "justificativa": "Significa que pode ser migrado e rodar na nuvem (provavelmente em IaaS) sem grandes refatorações, mas talvez ainda não seja 'Cloud Native'."
+  },
+  {
+    "enunciado": "No modelo IaaS, o consumidor gerencia a infraestrutura de nuvem subjacente.",
+    "correta": "E",
+    "tema": "Responsabilidade IaaS",
+    "justificativa": "O consumidor gerencia o SO e as aplicações. Quem gerencia a infraestrutura subjacente (hardware, hypervisor) é o provedor."
+  },
+  {
+    "enunciado": "O modelo que fornece servidores, armazenamento e ferramentas pré-montadas para desenvolver, testar e entregar aplicativos é o PaaS.",
+    "correta": "C",
+    "tema": "Definição PaaS",
+    "justificativa": "O foco em fornecer ferramentas de ciclo de vida de software (desenvolver, testar) define a Plataforma como Serviço."
+  },
+  {
+    "enunciado": "Para um gestor que precisa de webmail sem gerenciar sistemas operacionais subjacentes, o modelo mais adequado é o IaaS.",
+    "correta": "E",
+    "tema": "Webmail (SaaS)",
+    "justificativa": "Webmail (Gmail, Outlook) é **SaaS**. Se usar IaaS, terá que gerenciar o SO e instalar o servidor de email manualmente."
+  },
+  {
+    "enunciado": "No modelo PaaS, o fornecimento e o gerenciamento do processamento físico e do ambiente de hospedagem são de responsabilidade exclusiva do provedor, sem envolvimento do usuário na configuração.",
+    "correta": "E",
+    "tema": "Configuração PaaS",
+    "justificativa": "Embora o provedor gerencie o hardware, no PaaS o usuário frequentemente configura o ambiente de hospedagem da aplicação (ex: escolhe versão do runtime, define regras de escala, variáveis de ambiente). Não é uma 'caixa preta' total como no SaaS."
+  },
+ {
+    "enunciado": "A categoria de nuvem pública é caracterizada por oferecer serviços (IaaS, PaaS, SaaS) em data centers de um provedor que vende acesso tarifado para outras empresas.",
+    "correta": "C",
+    "tema": "Nuvem Pública",
+    "justificativa": "A nuvem pública é definida pelo modelo de negócio onde a infraestrutura pertence ao provedor e é vendida como serviço para o público em geral ou empresas [1]."
+  },
+  {
+    "enunciado": "No modelo IaaS, o cliente deve instalar e configurar por conta própria recursos como compiladores, banco de dados e o sistema operacional.",
+    "correta": "C",
+    "tema": "Responsabilidade IaaS",
+    "justificativa": "No IaaS, o provedor entrega o hardware virtualizado ('metal'). O cliente é responsável por instalar e manter todo o software, incluindo o SO e ferramentas de desenvolvimento [2]."
+  },
+  {
+    "enunciado": "Na Plataforma como Serviço (PaaS), os desenvolvedores podem criar aplicativos sem se preocupar com o gerenciamento da infraestrutura subjacente de servidores.",
+    "correta": "C",
+    "tema": "PaaS",
+    "justificativa": "O principal valor do PaaS é abstrair a complexidade do hardware e SO, permitindo foco total no código da aplicação [3]."
+  },
+  {
+    "enunciado": "No Microsoft Azure, o arquivo 'ServiceConfiguration.cscfg' é utilizado para definir o número de instâncias para cada função do serviço e impressões digitais de certificados.",
+    "correta": "C",
+    "tema": "Microsoft Azure (Arquivos de Configuração)",
+    "justificativa": "Este arquivo XML específico armazena as configurações que podem ser alteradas sem redeploy do serviço, como contagem de instâncias [4]."
+  },
+  {
+    "enunciado": "Para utilizar um certificado digital em uma instância de função no Microsoft Azure, deve-se carregar o arquivo .pfx (que contém a chave privada).",
+    "correta": "C",
+    "tema": "Microsoft Azure (Segurança)",
+    "justificativa": "Para que a aplicação possa decriptar tráfego SSL/TLS ou autenticar-se, ela precisa do certificado completo, incluindo a chave privada, comumente no formato .pfx [5]."
+  },
+  {
+    "enunciado": "O Visual Studio é o ambiente de desenvolvimento integrado (IDE) disponibilizado pela Microsoft para criar aplicativos para o Azure.",
+    "correta": "C",
+    "tema": "Ferramentas Microsoft",
+    "justificativa": "Visual Studio possui integração nativa profunda com o Azure para deploy e debug [6]."
+  },
+  {
+    "enunciado": "Computação elástica refere-se à capacidade de alocar dinamicamente recursos para suportar cargas de trabalho variáveis.",
+    "correta": "C",
+    "tema": "Elasticidade",
+    "justificativa": "É a habilidade de expandir (scale out) ou reduzir (scale in) automaticamente conforme o tráfego aumenta ou diminui [7]."
+  },
+  {
+    "enunciado": "Nuvem pública é definida como aquela operada exclusivamente por um ente público (governo) para atender instituições governamentais.",
+    "correta": "E",
+    "tema": "Nuvem Pública vs Privada/Gov",
+    "justificativa": "Nuvem pública refere-se ao acesso aberto ao público geral/mercado (ex: AWS, Google). Uma nuvem operada pelo governo para o governo seria uma nuvem privada ou comunitária governamental [8]."
+  },
+  {
+    "enunciado": "A infraestrutura SaaS executa apenas aplicativos disponibilizados pelo provedor de serviços.",
+    "correta": "C",
+    "tema": "SaaS",
+    "justificativa": "No SaaS, o cliente não implanta seus próprios softwares; ele usa o software que o provedor disponibilizou (ex: Salesforce, Gmail) [9]."
+  },
+  {
+    "enunciado": "Um risco da computação em nuvem é a desperimetrização, onde sistemas na nuvem ultrapassam os limites físicos da organização, cruzando fronteiras de segurança tradicionais.",
+    "correta": "C",
+    "tema": "Segurança (Desperimetrização)",
+    "justificativa": "Com a nuvem, o perímetro de segurança não é mais a borda da rede física da empresa (firewall local), mas sim a identidade e o acesso, tornando a segurança mais complexa [9]."
+  },
+  {
+    "enunciado": "O hypervisor controla o disco rígido para garantir que o acesso seja feito exclusivamente por uma única máquina virtual, impedindo o compartilhamento.",
+    "correta": "E",
+    "tema": "Virtualização (Hypervisor)",
+    "justificativa": "O papel do hypervisor é justamente permitir o *compartilhamento* seguro de recursos físicos (como disco) entre múltiplas VMs simultâneas, e não garantir uso exclusivo físico [10]."
+  },
+  {
+    "enunciado": "Na IaaS, a precificação de instâncias 'transientes' (spot) pode sofrer forte influência de custos e interrupções, pois não há garantia de disponibilidade futura.",
+    "correta": "C",
+    "tema": "Instâncias Spot/Transientes",
+    "justificativa": "Essas instâncias usam capacidade ociosa do provedor a preços baixos, mas o provedor pode retomá-las a qualquer momento se precisar do hardware, exigindo que a aplicação saiba lidar com interrupções [11]."
+  },
+  {
+    "enunciado": "Em um ambiente multicloud, ferramentas de orquestração podem gerenciar recursos de infraestrutura distribuídos em diversos provedores.",
+    "correta": "C",
+    "tema": "Multicloud",
+    "justificativa": "Orquestradores de nuvem (como Kubernetes ou Terraform) visam unificar a gestão de recursos disparatados em múltiplas nuvens [12]."
+  },
+  {
+    "enunciado": "A elasticidade manual é realizada por meio de APIs disparadas manualmente pelos usuários ao monitorar o sistema.",
+    "correta": "E",
+    "tema": "Elasticidade Automática",
+    "justificativa": "Elasticidade, no conceito estrito de nuvem, refere-se à automação baseada em métricas (triggers). Disparo manual é possível, mas a definição de 'elasticidade' busca a reação automática à demanda [13]."
+  },
+  {
+    "enunciado": "Uma região de nuvem é um subconjunto dentro de uma zona de disponibilidade.",
+    "correta": "E",
+    "tema": "Hierarquia Região vs Zona",
+    "justificativa": "A hierarquia é o oposto: Uma **Região** (ex: Norte da Virgínia) contém múltiplas **Zonas de Disponibilidade** (AZs). Uma Zona não contém Regiões [14]."
+  },
+  {
+    "enunciado": "Uma nuvem híbrida é a separação lógica de uma parte de uma nuvem pública para uso privado.",
+    "correta": "E",
+    "tema": "Nuvem Híbrida",
+    "justificativa": "Separar uma parte da nuvem pública é o conceito de VPC (Virtual Private Cloud). Nuvem Híbrida exige a conexão entre dois ambientes distintos: um privado (on-premise) e um público [15]."
+  },
+  {
+    "enunciado": "Infrastructure as Code (IaC) utiliza código descritivo de alto nível para automatizar o provisionamento de TI.",
+    "correta": "C",
+    "tema": "IaC",
+    "justificativa": "IaC (ex: Terraform, CloudFormation) permite definir a infraestrutura em arquivos de texto (código) para automação e versionamento [16]."
+  },
+  {
+    "enunciado": "A infraestrutura física de uma nuvem privada deve obrigatoriamente estar localizada dentro da rede interna e instalações da própria organização.",
+    "correta": "E",
+    "tema": "Nuvem Privada (Localização)",
+    "justificativa": "Uma nuvem privada pode ser hospedada externamente (Off-premise) por um provedor terceiro, desde que o uso seja *exclusivo* daquela organização [17]."
+  },
+  {
+    "enunciado": "PaaS é a infraestrutura indicada para desenvolvimento de aplicações em nuvem, oferecendo recursos de ciclo de vida (DevOps).",
+    "correta": "C",
+    "tema": "Uso de PaaS",
+    "justificativa": "PaaS fornece o ecossistema completo (banco de dados, runtimes, pipelines de deploy) ideal para desenvolvedores [18]."
+  },
+  {
+    "enunciado": "O modelo Serverless caracteriza-se pela ausência de gerenciamento de infraestrutura pelo usuário e dimensionamento automático por consumo.",
+    "correta": "C",
+    "tema": "Serverless",
+    "justificativa": "Serverless não significa 'sem servidores' (eles existem), mas sim que o usuário não os gerencia. O custo é baseado na execução precisa (tempo/memória) [18]."
+  },
+  {
+    "enunciado": "As aplicações do modelo SaaS devem sempre utilizar bancos de dados fisicamente separados para cada cliente.",
+    "correta": "E",
+    "tema": "SaaS Multitenancy",
+    "justificativa": "Aplicações SaaS modernas frequentemente usam bancos de dados compartilhados (multitenant) com isolamento lógico (ID do cliente na tabela) para eficiência de custos, não necessariamente isolamento físico [19]."
+  },
+{
+    "enunciado": "No Hyper-V, a funcionalidade 'Cluster Shared Volume' permite flexibilidade no uso de armazenamento compartilhado entre máquinas virtuais.",
+    "correta": "C",
+    "tema": "Virtualização (Hyper-V)",
+    "justificativa": "O CSV (Cluster Shared Volume) permite que múltiplos nós em um cluster leiam e gravem no mesmo volume LUN simultaneamente, facilitando a migração ao vivo (Live Migration)."
+  },
+  {
+    "enunciado": "A estratégia de migração para nuvem onde a carga de trabalho é movida com o mínimo de modificações possíveis (apenas o necessário para rodar) é chamada de 'lift-and-shift'.",
+    "correta": "C",
+    "tema": "Estratégias de Migração",
+    "justificativa": "Lift-and-shift (Rehosting) é pegar a aplicação como está no data center local e jogá-la na nuvem (geralmente em IaaS) sem reescrever o código."
+  },
+  {
+    "enunciado": "Se um órgão decide gerenciar o sistema operacional e aplicativos, enquanto o provedor gerencia a infraestrutura de back-end (armazenamento, rede, virtualização), o modelo escolhido é o SaaS.",
+    "correta": "E",
+    "tema": "Responsabilidade Compartilhada",
+    "justificativa": "Se o cliente gerencia o Sistema Operacional, o modelo é **IaaS**. No SaaS, o cliente não tem acesso ao SO."
+  },
+  {
+    "enunciado": "A estratégia de migração 'improve-and-move' envolve modernizar a carga de trabalho durante a migração para aprimorar o desempenho e utilizar recursos nativos da nuvem.",
+    "correta": "C",
+    "tema": "Estratégias de Migração",
+    "justificativa": "Diferente do lift-and-shift, aqui há uma refatoração ou otimização (Replatforming/Refactoring) para aproveitar benefícios da nuvem (PaaS, elasticidade) durante o processo de mudança."
+  },
+  {
+    "enunciado": "Nuvem comunitária refere-se necessariamente à composição de duas ou mais nuvens que se mantêm como entidades individuais ligadas por tecnologia padronizada.",
+    "correta": "E",
+    "tema": "Nuvem Comunitária vs Híbrida",
+    "justificativa": "A definição dada (composição de duas nuvens distintas ligadas por tecnologia) refere-se à **Nuvem Híbrida**. Nuvem Comunitária é uma infraestrutura compartilhada por organizações com interesses comuns (ex: missão, segurança)."
+  },
+  {
+    "enunciado": "Uma organização que possui serviços em seu data center privado e em duas nuvens públicas distintas possui uma arquitetura de nuvem híbrida.",
+    "correta": "C",
+    "tema": "Nuvem Híbrida",
+    "justificativa": "A coexistência e operação integrada entre nuvem Privada e Pública define o modelo Híbrido."
+  },
+  {
+    "enunciado": "A nuvem pública, por ser acessível via internet, é caracterizada por ser livre e aberta (gratuita) para qualquer cidadão.",
+    "correta": "E",
+    "tema": "Nuvem Pública",
+    "justificativa": "Pública refere-se à disponibilidade de acesso ao mercado geral, não à gratuidade. A maioria é paga (tarifada por uso)."
+  },
+  {
+    "enunciado": "O cluster de servidores físicos é o componente central e único viabilizador da computação em nuvem, dispensando a virtualização.",
+    "correta": "E",
+    "tema": "Virtualização vs Cluster",
+    "justificativa": "A **Virtualização** é a tecnologia habilitadora central da nuvem, permitindo o compartilhamento de recursos (pool) e elasticidade. Apenas clusterizar servidores físicos (sem virtualização) é uma técnica antiga de HPC/HA, mas não define a nuvem moderna."
+  },
+  {
+    "enunciado": "A ideia central da computação em nuvem é possibilitar que aplicações de data centers isolados rodem na Internet em larga escala com uso elástico de recursos.",
+    "correta": "C",
+    "tema": "Conceito de Nuvem",
+    "justificativa": "A nuvem traz a escala da web e a elasticidade para as aplicações corporativas."
+  },
+  {
+    "enunciado": "Nuvens públicas proveem espaço ilimitado em servidores que reúnem as informações de todos os seus usuários sem segregação.",
+    "correta": "E",
+    "tema": "Segurança e Limites",
+    "justificativa": "O espaço não é tecnicamente 'ilimitado' (embora pareça), e os dados dos usuários são segregados logicamente (multitenancy) para garantir privacidade. Eles não são simplesmente 'reunidos' sem controle."
+  },
+  {
+    "enunciado": "Na nuvem privada, os riscos e definições da organização permanecem intactos, pois os recursos são provisionados para uso exclusivo daquela organização.",
+    "correta": "C",
+    "tema": "Nuvem Privada",
+    "justificativa": "Por ser exclusiva, a nuvem privada mantém a governança e o perfil de risco similar ao do data center tradicional, com maior controle."
+  },
+  {
+    "enunciado": "O modelo onde o provedor entrega software (código comum) consumido por muitos clientes (um para muitos), gerenciando hardware e segurança, é o SaaS.",
+    "correta": "C",
+    "tema": "SaaS",
+    "justificativa": "Software as a Service é o modelo de entrega 'um para muitos' da aplicação final."
+  },
+  {
+    "enunciado": "Google Drive e Office 365 são exemplos de soluções IaaS (Infraestrutura como Serviço).",
+    "correta": "E",
+    "tema": "Exemplos SaaS",
+    "justificativa": "Drive e Office 365 são softwares finais para o usuário, logo, são **SaaS**. IaaS seria alugar a VM para instalar o Office (o que não é o caso)."
+  },
+  {
+    "enunciado": "OpenNebula e OpenStack são soluções tecnológicas utilizadas para implementar Infraestrutura como Serviço (IaaS).",
+    "correta": "C",
+    "tema": "Ferramentas IaaS",
+    "justificativa": "OpenStack e OpenNebula são plataformas de software livre para criar e gerenciar nuvens (privadas ou públicas) no modelo IaaS."
+  },
+  {
+    "enunciado": "Uma característica essencial de uma nuvem pública segundo o NIST é a elasticidade rápida.",
+    "correta": "C",
+    "tema": "NIST Características",
+    "justificativa": "Rapid Elasticity é uma das 5 características essenciais."
+  },
+  {
+    "enunciado": "A migração para a nuvem pode ser feita via replicação, onde dados são copiados entre um servidor local e um servidor na nuvem.",
+    "correta": "C",
+    "tema": "Migração e Replicação",
+    "justificativa": "Cenário comum em nuvens híbridas ou backup/DR: replicação contínua de dados."
+  },
+  {
+    "enunciado": "Se uma organização usa duas infraestruturas de cloud privadas separadas geograficamente, ela possui uma nuvem híbrida.",
+    "correta": "E",
+    "tema": "Definição Híbrida",
+    "justificativa": "Ter duas nuvens privadas é apenas ter 'Multi-site Private Cloud'. Para ser **Híbrida**, é obrigatório ter a conexão entre tipos diferentes (Pública + Privada)."
+  },
+  {
+    "enunciado": "Uma infraestrutura como serviço (IaaS) permite implantar aplicativos sem a necessidade de provisionar recursos de rede, armazenamento e processamento.",
+    "correta": "E",
+    "tema": "IaaS vs PaaS",
+    "justificativa": "No IaaS, você **precisa** provisionar e configurar CPU, RAM, Disco e Rede. O modelo que dispensa essa configuração de baixo nível é o PaaS ou Serverless."
+  },
+  {
+    "enunciado": "Projetos que envolvem virtualização de servidores e cloud computing são classificados como projetos de infraestrutura tecnológica.",
+    "correta": "C",
+    "tema": "Classificação de Projetos",
+    "justificativa": "Cloud e virtualização compõem a base (o alicerce) da TI, portanto, infraestrutura."
+  },
 ];
